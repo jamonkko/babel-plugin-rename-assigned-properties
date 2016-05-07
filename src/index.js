@@ -6,38 +6,43 @@ export default ({ types: t }) => {
       valueNode
     )
 
+  const visitor = ({ renames, process }) => ({
+    AssignmentExpression(path) {
+      if (!process.includes('inline')) {
+        return
+      }
+      const { node: { operator, left: memberExpression, right: valueExpression } } = path
+      if (operator !== '=' || !t.isMemberExpression(memberExpression)) {
+        return
+      }
+      for (const object of Object.keys(renames)) {
+        if (!t.isIdentifier(memberExpression.object, { name: object })) {
+          continue
+        }
+        for (const property of Object.keys(renames[object])) {
+          if (!t.isIdentifier(memberExpression.property, { name: property })) {
+            continue
+          }
+          const [to, ...aliases] = [].concat(renames[object][property])
+          const renamedAssignment = buildPropertyAssignment(object, to, valueExpression)
+          const chainedAliasAssignments = aliases.reduce(
+            (chained, alias) =>
+              buildPropertyAssignment(object, alias, chained),
+            renamedAssignment
+          )
+          path.replaceWith(t.expressionStatement(chainedAliasAssignments))
+        }
+      }
+    }
+  })
+
   return {
     visitor: {
       Program: {
         exit(program, { opts }) {
-          program.traverse({
-            AssignmentExpression: {
-              enter(path) {
-                const { node: { operator, left: memberExpression, right: valueExpression } } = path
-                if (operator !== '=' || !t.isMemberExpression(memberExpression)) {
-                  return
-                }
-                for (const object of Object.keys(opts)) {
-                  if (!t.isIdentifier(memberExpression.object, { name: object })) {
-                    continue
-                  }
-                  for (const property of Object.keys(opts[object])) {
-                    if (!t.isIdentifier(memberExpression.property, { name: property })) {
-                      continue
-                    }
-                    const [to, ...aliases] = [].concat(opts[object][property])
-                    const renamedAssignment = buildPropertyAssignment(object, to, valueExpression)
-                    const chainedAliasAssignments = aliases.reduce(
-                      (chained, alias) =>
-                        buildPropertyAssignment(object, alias, chained),
-                      renamedAssignment
-                    )
-                    path.replaceWith(t.expressionStatement(chainedAliasAssignments))
-                  }
-                }
-              }
-            }
-          })
+          if (opts.process.includes('post')) {
+            program.traverse(visitor(Object.assign({}, opts, { process: 'inline' })))
+          }
         }
       }
     }
