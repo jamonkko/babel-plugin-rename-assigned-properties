@@ -13,22 +13,27 @@ export default ({ types: t }) => {
           program.traverse({
             AssignmentExpression: {
               enter(path) {
-                if (path.node.operator !== '=' || !t.isMemberExpression(path.node.left)) {
+                const { node: { operator, left: memberExpression, right: valueExpression } } = path
+                if (operator !== '=' || !t.isMemberExpression(memberExpression)) {
                   return
                 }
-                for (const name of Object.keys(opts)) {
-                  if (!t.isIdentifier(path.node.left.object, { name: 'global' })
-                    || !t.isIdentifier(path.node.left.property, { name })) {
+                for (const object of Object.keys(opts)) {
+                  if (!t.isIdentifier(memberExpression.object, { name: object })) {
                     continue
                   }
-                  const [to, ...aliases] = [].concat(opts[name])
-                  const renamedAssignment = buildPropertyAssignment('global', to, path.node.right)
-                  const chainedAliasAssignments = aliases.reduce(
-                    (chained, alias) =>
-                      buildPropertyAssignment('global', alias, chained),
-                    renamedAssignment
-                  )
-                  path.replaceWith(t.expressionStatement(chainedAliasAssignments))
+                  for (const property of Object.keys(opts[object])) {
+                    if (!t.isIdentifier(memberExpression.property, { name: property })) {
+                      continue
+                    }
+                    const [to, ...aliases] = [].concat(opts[object][property])
+                    const renamedAssignment = buildPropertyAssignment(object, to, valueExpression)
+                    const chainedAliasAssignments = aliases.reduce(
+                      (chained, alias) =>
+                        buildPropertyAssignment(object, alias, chained),
+                      renamedAssignment
+                    )
+                    path.replaceWith(t.expressionStatement(chainedAliasAssignments))
+                  }
                 }
               }
             }
