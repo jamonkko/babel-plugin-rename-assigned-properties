@@ -1,6 +1,6 @@
 {
-  "name": "babel-rename-assigned-properties",
-  "version": "0.0.2",
+  "name": "babel-plugin-rename-assigned-properties",
+  "version": "0.0.3",
   "description": "Rename and add aliases for object properties that are being assigned a value",
   "main": "lib",
   "jsnext:main": "src/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jamonkko/babel-rename-assigned-properties.git"
+    "url": "git+https://github.com/jamonkko/babel-plugin-rename-assigned-properties.git"
   },
   "keywords": [
     "babel",
@@ -31,9 +31,9 @@
   "author": "Jarkko Mönkkönen <jamonkko@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jamonkko/babel-rename-assigned-properties/issues"
+    "url": "https://github.com/jamonkko/babel-plugin-rename-assigned-properties/issues"
   },
-  "homepage": "https://github.com/jamonkko/babel-rename-assigned-properties#readme",
+  "homepage": "https://github.com/jamonkko/babel-plugin-rename-assigned-properties#readme",
   "devDependencies": {
     "babel-cli": "^6.8.0",
     "babel-eslint": "^6.0.4",

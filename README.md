@@ -1,10 +1,10 @@
-# babel-rename-assigned-properties
+# babel-plugin-rename-assigned-properties
 Rename and add aliases for object properties that are being assigned a value
 
 ## Installation
 
 ```sh
-$ npm install babel-rename-assigned-properties --save-dev
+$ npm install babel-plugin-rename-assigned-properties --save-dev
 ```
 
 ## Usage
@@ -17,11 +17,9 @@ $ npm install babel-rename-assigned-properties --save-dev
     Babel [traverses program only once](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md#toc-traversal) and the default _inline_ option will do the transformation during that cycle just like any normal plugin would do. However, you might use other plugins that inject new code that does not get traversed, so for those situations you can define _post_ to get that new code also processed by this plugin.  
     You can also specify both values to get both behaviours.
 
-### Examples via `.babelrc`
+### Example via `.babelrc`
 
-**.babelrc**
-
-Transforms `objectName.propertyName = value` to `objectName.newName = value`:
+Transform `objectName.propertyName = value` to `objectName.newName = value`
 
 ```json
 {
@@ -37,9 +35,12 @@ Transforms `objectName.propertyName = value` to `objectName.newName = value`:
 }
 ```
 
+### More examples via `.babelrc`
+
 You can also add aliases for properties by providing array of new names. Those will be transformed to chained assignments.
 It is also possible to specify transformation to be done as a separate post step (see [options](#options) above).  
-Transforms `rapper.coolio = gfunc` to `rapper.ArtisLeonIveyJr = rapper.C = rapper.Coolio = gfunc`:
+
+Transform `rapper.coolio = gfunc` to `rapper.ArtisLeonIveyJr = rapper.C = rapper.Coolio = gfunc`
 
 ```json
 {
@@ -49,7 +50,8 @@ Transforms `rapper.coolio = gfunc` to `rapper.ArtisLeonIveyJr = rapper.C = rappe
         "rapper": {
           "coolio": ["Coolio", "C", "ArtisLeonIveyJr"]
         }
-      }
+      },
+      "process": "post"
     }]
   ]
 }

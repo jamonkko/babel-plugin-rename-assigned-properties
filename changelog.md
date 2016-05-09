@@ -1,4 +1,9 @@
 
+Version: 0.0.3
+--------------
+- Renamed the rename plugin:  
+  babel-rename-assigned-properties -> babel-plugin-rename-assigned-properties
+
 Version: 0.0.2
 --------------
 - Upgrade dev dependencies
