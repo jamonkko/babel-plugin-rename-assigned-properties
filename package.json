@@ -1,8 +1,8 @@
 {
   "name": "babel-plugin-rename-assigned-properties",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Rename and add aliases for object properties that are being assigned a value",
-  "main": "lib",
+  "main": "lib/index.js",
   "jsnext:main": "src/index.js",
   "files": [
     "lib"

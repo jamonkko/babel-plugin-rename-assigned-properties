@@ -1,4 +1,8 @@
 
+Version: 0.0.4
+--------------
+- Update main entry in package.json
+
 Version: 0.0.3
 --------------
 - Renamed the rename plugin:  
