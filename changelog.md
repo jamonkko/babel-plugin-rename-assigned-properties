@@ -1,3 +1,6 @@
+Version: 0.0.5
+--------------
+- Fixing package.json files to include src to make jsnext:main to work
 
 Version: 0.0.4
 --------------
