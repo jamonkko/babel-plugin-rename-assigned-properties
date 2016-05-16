@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/jamonkko/babel-plugin-rename-assigned-properties.svg?branch=master)](https://travis-ci.org/jamonkko/babel-plugin-rename-assigned-properties)
+[![Coverage Status](https://coveralls.io/repos/github/jamonkko/babel-plugin-rename-assigned-properties/badge.svg?branch=master)](https://coveralls.io/github/jamonkko/babel-plugin-rename-assigned-properties?branch=master)
+[![npm version](https://img.shields.io/npm/v/babel-plugin-rename-assigned-properties.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-rename-assigned-properties)
+[![npm downloads](https://img.shields.io/npm/dm/babel-plugin-rename-assigned-properties.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-rename-assigned-properties)
+[![Dependency Status](https://david-dm.org/jamonkko/babel-plugin-rename-assigned-properties.svg)](https://david-dm.org/jamonkko/babel-plugin-rename-assigned-properties)
+[![devDependency Status](https://david-dm.org/jamonkko/babel-plugin-rename-assigned-properties/dev-status.svg)](https://david-dm.org/jamonkko/babel-plugin-rename-assigned-properties#info=devDependencies)
 # babel-plugin-rename-assigned-properties
 Rename and add aliases for object properties that are being assigned a value
 
