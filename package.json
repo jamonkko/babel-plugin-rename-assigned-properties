@@ -14,7 +14,7 @@
     "build": "npm run lint && npm test && npm run babel",
     "babel": "babel src -d lib",
     "lint": "eslint src test",
-    "cover": "nyc --require babel-core/register --all mocha",
+    "cover": "nyc --require babel-core/register --reporter=lcov --reporter=text --all mocha",
     "cover:report:coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {

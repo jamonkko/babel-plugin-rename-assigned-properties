@@ -14,6 +14,18 @@ suite('renaming properties', () => {
     result.code.should.equal('object.NewName = 0;')
   })
 
+  test('only normal direct first level property assignments get renamed', () => {
+    const result = transform(
+      'object.property += 0;property = 1;root.object.property = 2;',
+      {
+        plugins: [
+          ['./src/index.js', { renames: { object: { property: 'NewName' } } }]
+        ]
+      }
+    )
+    result.code.should.equal('object.property += 0;property = 1;root.object.property = 2;')
+  })
+
   test('rename with aliases', () => {
     const result = transform(
       'object.property = 0;',
