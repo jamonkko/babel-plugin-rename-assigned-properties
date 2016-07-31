@@ -34,13 +34,13 @@ export default ({ types: t }) => {
   return {
     visitor: {
       AssignmentExpression(path, { opts }) {
-        if (!opts.process || opts.process.includes('inline')) {
+        if (!opts.process || opts.process.indexOf('inline') !== -1) {
           visitAssignmentExpression(path, opts.renames)
         }
       },
       Program: {
         exit(program, { opts }) {
-          if (opts.process && opts.process.includes('post')) {
+          if (opts.process && opts.process.indexOf('post') !== -1) {
             program.traverse({
               AssignmentExpression(path) {
                 visitAssignmentExpression(path, opts.renames)
