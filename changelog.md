@@ -1,6 +1,8 @@
 Version: 0.0.6
 --------------
 - Added tests
+- includes -> indexOf to make ES5 compatible without polyfill
+- dev deps updates
 
 Version: 0.0.5
 --------------
