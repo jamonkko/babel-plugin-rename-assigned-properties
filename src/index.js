@@ -12,21 +12,19 @@ export default ({ types: t }) => {
       return
     }
     for (const object of Object.keys(renames)) {
-      if (!t.isIdentifier(memberExpression.object, { name: object })) {
-        continue
-      }
-      for (const property of Object.keys(renames[object])) {
-        if (!t.isIdentifier(memberExpression.property, { name: property })) {
-          continue
+      if (t.isIdentifier(memberExpression.object, { name: object })) {
+        for (const property of Object.keys(renames[object])) {
+          if (t.isIdentifier(memberExpression.property, { name: property })) {
+            const [to, ...aliases] = [].concat(renames[object][property])
+            const renamedAssignment = buildPropertyAssignment(object, to, valueExpression)
+            const chainedAliasAssignments = aliases.reduce(
+              (chained, alias) =>
+                buildPropertyAssignment(object, alias, chained),
+              renamedAssignment
+            )
+            path.replaceWith(t.expressionStatement(chainedAliasAssignments))
+          }
         }
-        const [to, ...aliases] = [].concat(renames[object][property])
-        const renamedAssignment = buildPropertyAssignment(object, to, valueExpression)
-        const chainedAliasAssignments = aliases.reduce(
-          (chained, alias) =>
-            buildPropertyAssignment(object, alias, chained),
-          renamedAssignment
-        )
-        path.replaceWith(t.expressionStatement(chainedAliasAssignments))
       }
     }
   }
