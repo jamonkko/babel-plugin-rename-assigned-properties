@@ -1,3 +1,9 @@
+Version: 0.0.7
+--------------
+- Support for node 0.10 added by using babel-runtime plugin
+- Travis builds with node 0.12 and 0.10 
+- dev deps updates 
+
 Version: 0.0.6
 --------------
 - Added tests
