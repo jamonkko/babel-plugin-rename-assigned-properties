@@ -1,3 +1,4 @@
+/* eslint-env mocha */
 import { transform } from 'babel-core'
 import dedent from 'dedent'
 

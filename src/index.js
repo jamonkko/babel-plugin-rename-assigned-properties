@@ -6,7 +6,7 @@ export default ({ types: t }) => {
       valueNode
     )
 
-  function visitAssignmentExpression(path, renames) {
+  function visitAssignmentExpression (path, renames) {
     const { node: { operator, left: memberExpression, right: valueExpression } } = path
     if (operator !== '=' || !t.isMemberExpression(memberExpression)) {
       return
@@ -31,16 +31,16 @@ export default ({ types: t }) => {
 
   return {
     visitor: {
-      AssignmentExpression(path, { opts }) {
+      AssignmentExpression (path, { opts }) {
         if (!opts.process || opts.process.indexOf('inline') !== -1) {
           visitAssignmentExpression(path, opts.renames)
         }
       },
       Program: {
-        exit(program, { opts }) {
+        exit (program, { opts }) {
           if (opts.process && opts.process.indexOf('post') !== -1) {
             program.traverse({
-              AssignmentExpression(path) {
+              AssignmentExpression (path) {
                 visitAssignmentExpression(path, opts.renames)
               }
             })
