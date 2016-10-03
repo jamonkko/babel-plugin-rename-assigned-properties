@@ -4,6 +4,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/babel-plugin-rename-assigned-properties.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-rename-assigned-properties)
 [![Dependency Status](https://david-dm.org/jamonkko/babel-plugin-rename-assigned-properties.svg)](https://david-dm.org/jamonkko/babel-plugin-rename-assigned-properties)
 [![devDependency Status](https://david-dm.org/jamonkko/babel-plugin-rename-assigned-properties/dev-status.svg)](https://david-dm.org/jamonkko/babel-plugin-rename-assigned-properties#info=devDependencies)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 # babel-plugin-rename-assigned-properties
 Rename and add aliases for object properties that are being assigned a value
 
