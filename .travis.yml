@@ -6,10 +6,9 @@ node_js:
   - 5
   - 0.12
   - 0.10
-  
-install:
-  - npm install
+
+install: if [[ `node -v` == v0.1* ]]; then npm install; else yarn install; fi
 
 script: if [[ `node -v` == v0.1* ]]; then npm test; else npm run build && npm run cover; fi
-  
+
 after_script: 'npm run cover:report:coveralls'
