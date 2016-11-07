@@ -13,7 +13,11 @@ Rename and add aliases for object properties that are being assigned a value
 ## Installation
 
 ```sh
+# With npm
 $ npm install babel-plugin-rename-assigned-properties --save-dev
+
+# With yarn 
+$ yarn add babel-plugin-rename-assigned-properties --dev
 ```
 
 Tested to work with Node >= 0.10
