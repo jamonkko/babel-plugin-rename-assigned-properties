@@ -16,6 +16,8 @@ Rename and add aliases for object properties that are being assigned a value
 $ npm install babel-plugin-rename-assigned-properties --save-dev
 ```
 
+Tested to work with Node >= 0.10
+
 ## Usage
 
 ### Options

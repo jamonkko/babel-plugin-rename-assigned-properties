@@ -41,6 +41,10 @@
     "url": "https://github.com/jamonkko/babel-plugin-rename-assigned-properties/issues"
   },
   "homepage": "https://github.com/jamonkko/babel-plugin-rename-assigned-properties#readme",
+  "engines" : {
+    "node" : ">= 0.10",
+    "iojs": ">= 1.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.16.0",
