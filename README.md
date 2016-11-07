@@ -90,5 +90,5 @@ require("babel-core").transform("code", {
 
 ### Sponsors
 
-[Leonidas](https://leonidasoy.fi/)
+[Leonidas](https://leonidasoy.fi/opensource)
 
