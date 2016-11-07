@@ -1,8 +1,15 @@
+Version: 1.0.0
+--------------
+- Migrate to yarn (add yarn.lock file)
+- Migrate to standard.js from custom eslint
+- Update dev deps
+- Releasing 1.0.0 with tested node 0.1X support. Tested older node version will be (likely) dropped from 2.0.0
+
 Version: 0.0.7
 --------------
 - Support for node 0.10 added by using babel-runtime plugin
-- Travis builds with node 0.12 and 0.10 
-- dev deps updates 
+- Travis builds with node 0.12 and 0.10
+- dev deps updates
 
 Version: 0.0.6
 --------------
@@ -20,7 +27,7 @@ Version: 0.0.4
 
 Version: 0.0.3
 --------------
-- Renamed the rename plugin:  
+- Renamed the rename plugin:
   babel-rename-assigned-properties -> babel-plugin-rename-assigned-properties
 
 Version: 0.0.2
