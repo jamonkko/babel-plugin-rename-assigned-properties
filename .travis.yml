@@ -8,6 +8,8 @@ addons:
     sources:
       - sourceline: 'deb https://dl.yarnpkg.com/debian/ stable main'
         key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+    packages:
+      - yarn
 
 node_js:
   - stable
