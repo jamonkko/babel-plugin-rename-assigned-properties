@@ -20,6 +20,6 @@ node_js:
 
 install: if [[ `node -v` == v0.1* ]]; then npm install; else yarn install; fi
 
-script: if [[ `node -v` == v0.1* ]]; then npm test; else npm run build && npm run cover; fi
+script: if [[ `node -v` == v0.1* ]]; then npm test; else yarn build && yarn cover; fi
 
 after_script: 'npm run cover:report:coveralls'
