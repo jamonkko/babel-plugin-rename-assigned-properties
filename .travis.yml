@@ -2,6 +2,11 @@ language: node_js
 sudo: false
 cache: yarn
 
+addons:
+  apt:
+    packages:
+      - yarn
+
 node_js:
   - stable
   - 6
