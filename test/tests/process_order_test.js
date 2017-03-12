@@ -40,4 +40,3 @@ suite('processing order', () => {
     result.code.should.equal('object.RealFinalName = 0;')
   })
 })
-

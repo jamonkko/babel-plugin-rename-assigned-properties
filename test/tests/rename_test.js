@@ -65,4 +65,3 @@ suite('renaming properties', () => {
       object.noRename = 2;otherObject.OtherNewName1 = 3;`)
   })
 })
-
