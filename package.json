@@ -56,7 +56,7 @@
     "dedent": "^0.7.0",
     "mocha": "^3.0.2",
     "nyc": "^10.0.0",
-    "standard": "^8.3.0"
+    "standard": "^9.0.0"
   },
   "dependencies": {
     "babel-runtime": "^6.11.6"
