@@ -5,8 +5,9 @@ cache: yarn
 
 addons:
   apt:
-    packages:
-      - yarn
+    sources:
+      - sourceline: 'deb https://dl.yarnpkg.com/debian/ stable main'
+        key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
 
 node_js:
   - stable
