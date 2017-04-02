@@ -8,6 +8,8 @@
 [![Sponsored by Leonidas](https://img.shields.io/badge/sponsored%20by-leonidas-389fc1.svg)](https://leonidasoy.fi/opensource)
 
 # babel-plugin-rename-assigned-properties
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/jamonkko/babel-plugin-rename-assigned-properties.svg)](https://greenkeeper.io/)
 Rename and add aliases for object properties that are being assigned a value
 
 ## Installation
