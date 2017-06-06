@@ -36,5 +36,4 @@ after_success:
  - if [ "$TRAVIS_NODE_VERSION" = "stable" ]; then npm run cover:report:coveralls; fi
  - if [ "$TRAVIS_NODE_VERSION" = "stable" ]; then npm install codeclimate-test-reporter --global; fi
  - if [ "$TRAVIS_NODE_VERSION" = "stable" ]; then codeclimate-test-reporter < coverage/lcov.info; fi
- - env
 
