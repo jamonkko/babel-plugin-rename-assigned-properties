@@ -4,6 +4,7 @@
   "description": "Rename and add aliases for object properties that are being assigned a value",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
+  "module": "src/index.js",
   "files": [
     "lib",
     "src"
