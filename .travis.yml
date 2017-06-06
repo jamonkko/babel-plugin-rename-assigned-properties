@@ -32,5 +32,7 @@ script: if [[ `node -v` == v0.1* ]]; then npm test; elif [[ `node -v` > v8 ]]; t
 
 after_success:
  - if [[ `node -v` == v8* ]]; then npm run cover:report:coveralls; fi
- - if [[ `node -v` == v8* ]]; then npm install codeclimate-test-reporter --global fi
- - if [[ `node -v` == v8* ]]; then codeclimate-test-reporter < coverage/lcov.info fi
+ - if [[ `node -v` == v8* ]]; then npm install codeclimate-test-reporter --global; fi
+ - if [[ `node -v` == v8* ]]; then codeclimate-test-reporter < coverage/lcov.info; fi
+ - env
+
