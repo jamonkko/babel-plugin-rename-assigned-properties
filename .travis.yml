@@ -6,6 +6,8 @@ cache:
   directories:
     - $HOME/.cache/yarn
     - $HOME/.npm
+before_cache:
+  - rm -f $HOME/.npm/anonymous-cli-metrics.json
 
 addons:
   apt:
@@ -31,8 +33,8 @@ install: if [[ `node -v` == v0.1* ]]; then npm install; elif [[ `node -v` > v8 ]
 script: if [[ `node -v` == v0.1* ]]; then npm test; elif [[ `node -v` > v8 ]]; then npm run build && npm run cover; else yarn build && yarn cover; fi
 
 after_success:
- - if [[ `node -v` == v8* ]]; then npm run cover:report:coveralls; fi
- - if [[ `node -v` == v8* ]]; then npm install codeclimate-test-reporter --global; fi
- - if [[ `node -v` == v8* ]]; then codeclimate-test-reporter < coverage/lcov.info; fi
+ - if [ "$TRAVIS_NODE_VERSION" = "stable" ]; then npm run cover:report:coveralls; fi
+ - if [ "$TRAVIS_NODE_VERSION" = "stable" ]; then npm install codeclimate-test-reporter --global; fi
+ - if [ "$TRAVIS_NODE_VERSION" = "stable" ]; then codeclimate-test-reporter < coverage/lcov.info; fi
  - env
 
