@@ -1,3 +1,10 @@
+Version: 1.0.1
+--------------
+- Migrate to npm5
+- Add license header
+- Support module entry in package.json
+- Updated dependencies
+
 Version: 1.0.0
 --------------
 - Migrate to yarn (add yarn.lock file)
