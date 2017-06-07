@@ -2,7 +2,7 @@
 import { transform } from 'babel-core'
 
 suite('processing order', () => {
-  test('no renaming if unknown process option', () => {
+  test('no renaming if unknown process option', (done) => {
     const result = transform(
       'object.property = 0;',
       {
@@ -15,9 +15,10 @@ suite('processing order', () => {
       }
     )
     result.code.should.equal('object.property = 0;')
+    done()
   })
 
-  test('both inline and post works, even same time', () => {
+  test('both inline and post works, even same time', (done) => {
     const result = transform(
       'object.property = 0;',
       {
@@ -38,5 +39,6 @@ suite('processing order', () => {
       }
     )
     result.code.should.equal('object.RealFinalName = 0;')
+    done()
   })
 })
