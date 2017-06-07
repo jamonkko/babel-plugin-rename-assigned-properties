@@ -58,7 +58,7 @@
     "dedent": "^0.7.0",
     "mocha": "^3.4.2",
     "module-header": "github:jamonkko/module-header#replace-existing",
-    "nyc": "^10.0.0",
+    "nyc": "^11.0.2",
     "standard": "^10.0.1"
   },
   "dependencies": {
