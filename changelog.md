@@ -1,8 +1,9 @@
 Version: 1.0.1
 --------------
-- Migrate to npm5
+- Migrate to new npm
 - Add license header
 - Support module entry in package.json
+- Migrate tests from mocha to tape
 - Updated dependencies
 
 Version: 1.0.0
