@@ -10,14 +10,14 @@
     "src"
   ],
   "scripts": {
-    "autotest": "mocha --ui tdd --watch",
+    "autotest": "tape-watch -r babel-register -r babel-polyfill tests/*.js -p tap-diff",
     "babel": "babel src -d lib",
     "build": "npm run header && npm run standard && npm test && npm run babel",
-    "cover": "nyc --require babel-core/register --reporter=lcov --reporter=text --all mocha",
+    "cover": "nyc --require babel-core/register --reporter=lcov --reporter=text --all tape tests/*.js | tap-nyc",
     "cover:report:coveralls": "nyc report --reporter=text-lcov | coveralls",
     "header": "header src/*.js lib/*.js",
     "standard": "standard",
-    "test": "mocha --ui tdd"
+    "test": "tape -r babel-register tests/*.js | tap-diff"
   },
   "nyc": {
     "include": [
@@ -52,14 +52,18 @@
     "babel-core": "^6.24.1",
     "babel-eslint": "^8.0.0",
     "babel-plugin-transform-runtime": "^6.12.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "chai": "^4.1.0",
+    "babel-register": "^6.26.0",
     "coveralls": "^3.0.0",
     "dedent": "^0.7.0",
-    "mocha": "^4.0.0",
     "module-header": "github:jamonkko/module-header#replace-existing",
     "nyc": "^11.0.2",
-    "standard": "^10.0.1"
+    "standard": "^10.0.1",
+    "tap-diff": "^0.1.1",
+    "tap-nyc": "^1.0.3",
+    "tape": "^4.8.0",
+    "tape-watch": "^2.3.0"
   },
   "dependencies": {
     "babel-runtime": "^6.11.6"

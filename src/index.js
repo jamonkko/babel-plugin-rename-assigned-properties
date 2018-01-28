@@ -1,7 +1,7 @@
 /*!
  * @license
  * babel-plugin-rename-assigned-properties v1.0.0 (https://github.com/jamonkko/babel-plugin-rename-assigned-properties#readme)
- * Copyright 2017 Jarkko Mönkkönen <jamonkko@gmail.com>
+ * Copyright 2018 Jarkko Mönkkönen <jamonkko@gmail.com>
  * Licensed under MIT
  */
 export default ({ types: t }) => {
