@@ -30,7 +30,7 @@ node_js:
 
 install: if [[ `node -v` == v0.1* ]]; then npm install; elif [[ `node -v` > v8 ]]; then npm install; else yarn install; fi
 
-script: if [[ `node -v` == v0.1* ]]; then npm test; elif [[ `node -v` > v8 ]]; then npm run build && npm run cover; else yarn build && yarn cover; fi
+script: if [ "$TRAVIS_NODE_VERSION" = "stable" ]; then npm run build && npm run cover; else npm test; fi
 
 after_success:
  - if [ "$TRAVIS_NODE_VERSION" = "stable" ]; then npm run cover:report:coveralls; fi
