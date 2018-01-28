@@ -7,6 +7,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Sponsored by Leonidas](https://img.shields.io/badge/sponsored%20by-leonidas-389fc1.svg)](https://leonidasoy.fi/opensource)
 [![Greenkeeper badge](https://badges.greenkeeper.io/jamonkko/babel-plugin-rename-assigned-properties.svg)](https://greenkeeper.io/)
+[![Maintainability](https://api.codeclimate.com/v1/badges/e6ada85f8407047af3c2/maintainability)](https://codeclimate.com/github/jamonkko/babel-plugin-rename-assigned-properties/maintainability)
 
 # babel-plugin-rename-assigned-properties
 
