@@ -16,8 +16,6 @@ addons:
         key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
     packages:
       - yarn
-  code_climate:
-      repo_token: 876df78288574adc2ea5ad95f3366b8ac0c7c61ef6e1653118077cd17fb5d178
 
 node_js:
   - stable
