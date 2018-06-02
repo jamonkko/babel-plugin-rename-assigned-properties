@@ -58,7 +58,7 @@
     "coveralls": "^3.0.0",
     "dedent": "^0.7.0",
     "module-header": "github:jamonkko/module-header#replace-existing",
-    "nyc": "^11.0.2",
+    "nyc": "^12.0.1",
     "standard": "^10.0.1",
     "tap-diff": "^0.1.1",
     "tap-nyc": "^1.0.3",
