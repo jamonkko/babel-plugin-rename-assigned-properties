@@ -62,7 +62,7 @@
     "standard": "^10.0.1",
     "tap-diff": "^0.1.1",
     "tap-nyc": "^1.0.3",
-    "tape": "^4.8.0",
+    "tape": "^5.0.0",
     "tape-watch": "^2.3.0"
   },
   "dependencies": {
